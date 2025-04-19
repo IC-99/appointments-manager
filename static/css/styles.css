@@ -1,0 +1,268 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.form-group label {
+    width: 150px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.form-group input,
+.form-group select {
+    flex: 1;
+    padding: 5px;
+}
+.readonly-info {
+    margin-bottom: 10px;
+}
+
+input, select, button {
+    display: block;
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    filter: invert(100%) brightness(200%);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.btn-text {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+#new-appointment-button {
+    width: 230px;
+    align-content: center;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#search-input {
+    width: 240px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#search-button {
+    width: 120px;
+    height: 20px;
+    padding: 20px;
+    background-color: #fc8f00;
+}
+
+#search-button:hover {
+    background-color: #e98400;
+}
+
+#x-button {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    background-color: #af4c4c;
+}
+
+#x-button:hover {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    background-color: #a04545;
+}
+
+#x {
+    margin-left: -15px;
+}
+
+#calendar-button {
+    width: 200px;
+    height: 80px;
+    padding: 20px;
+    background-color: #fc8f00;
+    margin: auto;
+    text-align: center;
+}
+
+#calendar-button:hover {
+    background-color: #e98400;
+}
+
+.delete-button {
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.delete-button:hover {
+    background-color: #a04545;
+}
+
+#appointments-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.appointment-item:last-child {
+    border-bottom: none;
+}
+
+.appointment-item button {
+    margin-right: 5px;
+}
+
+#appointments-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.appointment-column {
+    flex: 1;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#upper-columns {
+    display: flex;
+    flex-direction: row
+}
+.upper-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.appointment-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.appointment-item strong {
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px; 
+}
+
+#search-buttons-container {
+    display: flex;
+    width: 200px;
+    margin-inline: auto;
+}
+
+/* Stile per ogni appuntamento */
+.appointment-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.appointment-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Stile per l'intestazione dell'appuntamento */
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Dettagli dell'appuntamento */
+.appointment-details {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.appointment-details p {
+    margin: 5px 0;
+}
+
+/* Stile per i bottoni */
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Icone per i bottoni */
+button i {
+    font-size: 1.1em;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Appuntamenti</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div id="upper-columns">
+        <div class="upper-column">
+            <input type="text" id="search-input" placeholder="Cerca appuntamento...">
+            <div id="search-buttons-container">
+                <button id="search-button" onclick="filterAppointments()">
+                    <img src="../static/images/search.svg" alt="add" class="icon">
+                    <span class="btn-text">Filtra</span>
+                </button>
+                <button id="x-button" onclick="clearFilter()">
+                    <img id="x" src="../static/images/cross.svg" alt="add" class="icon">
+                </button>
+            </div>
+        </div>
+        <div class="upper-column">
+            <h1>Gestione Appuntamenti</h1>
+
+            <button id="new-appointment-button" onclick="addAppointment()">
+                <img src="../static/images/add.svg" alt="add" class="icon">
+                <span class="btn-text">Nuovo Appuntamento</span>
+            </button>
+        </div>
+        <div class="upper-column">
+            <button id="calendar-button" onclick="openCalendar()">
+                <img src="../static/images/calendar.svg" alt="add" class="icon">
+                <span class="btn-text">Apri il Calendario</span>
+            </button>
+        </div>
+    </div>
+
+    <h2>Appuntamenti</h2>
+
+    <div id="appointments-columns">
+        <div id="in-definition-column" class="appointment-column">
+            <h3>In Definizione</h3>
+            <div id="in-definition-appointments"></div>
+        </div>
+        <div id="in-progress-column" class="appointment-column">
+            <h3>In Corso</h3>
+            <div id="in-progress-appointments"></div>
+        </div>
+        <div id="waiting-column" class="appointment-column">
+            <h3>In Attesa</h3>
+            <div id="waiting-appointments"></div>
+        </div>
+        <div id="completed-column" class="appointment-column">
+            <h3>Completati</h3>
+            <div id="completed-appointments"></div>
+        </div>
+    </div>
+
+    <script src="../static/js/main.js" charset="utf-8"></script>
+</body>
+</html>

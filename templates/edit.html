@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Appuntamenti</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <section id="form-section">
+        <h2>Modifica Appuntamento</h2>
+        <form id="appointment-form">
+            
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Nome">
+            </div>
+
+            <div class="form-group">
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" placeholder="Cognome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="indirizzo">Indirizzo:</label>
+                <input type="text" id="indirizzo" placeholder="Indirizzo">
+            </div>
+
+            <div class="form-group">
+                <label for="zona">Zona:</label>
+                <input type="text" id="zona" placeholder="Zona">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Telefono:</label>
+                <input type="text" id="telefono" placeholder="Telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono2">Telefono 2:</label>
+                <input type="text" id="telefono2" placeholder="Telefono 2">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="data_appuntamento">Data Appuntamento:</label>
+                <input type="date" id="data_appuntamento">
+            </div>
+
+            <div class="form-group">
+                <label for="ora_appuntamento">Ora Appuntamento:</label>
+                <input type="time" id="ora_appuntamento">
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" placeholder="Marca">
+            </div>
+
+            <div class="form-group">
+                <label for="modello">Modello:</label>
+                <input type="text" id="modello" placeholder="Modello">
+            </div>
+
+            <div class="form-group">
+                <label for="matricola">Matricola:</label>
+                <input type="text" id="matricola" placeholder="Matricola">
+            </div>
+
+            <div class="form-group">
+                <label for="difetto">Difetto:</label>
+                <input type="text" id="difetto" placeholder="Difetto">
+            </div>
+
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <input type="text" id="note" placeholder="Note">
+            </div>
+
+            <div class="form-group">
+                <label for="garanzia">Garanzia:</label>
+                <select id="garanzia">
+                    <option value="si">Con Garanzia</option>
+                    <option value="no">Senza Garanzia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="stato_intervento">Stato Intervento:</label>
+                <select id="stato_intervento">
+                    <option value="in definizione">In Definizione</option>
+                    <option value="in corso">In Corso</option>
+                    <option value="in attesa">In Attesa</option>
+                    <option value="completato">Completato</option>
+                </select>
+            </div>
+
+            <!-- Informazioni di sola lettura -->
+            <div class="readonly-info">
+                <span>Data di creazione:</span> <span id="data_creazione"></span>
+            </div>
+            <div class="readonly-info">
+                <span>Data ultima modifica:</span> <span id="ultima_modifica"></span>
+            </div>
+
+            <button type="submit">
+                <span class="btn-text">Salva Modifiche Appuntamento</span>
+            </button>
+        </form>
+    </section>
+
+    <script src="../static/js/edit.js" charset="utf-8"></script>
+</body>
+</html>
