@@ -245,7 +245,11 @@ window.onload = function () {
                     events.forEach(function (ev) {
                         var div = createElement('div', 'event');
                         var square = createElement('div', 'event-category');
-                        var span = createElement('span', '', ev.ora_appuntamento + ' - ' + ev.ora_fine_appuntamento + ' | ' + ev.indirizzo + ' (' + ev.zona + ') | ' + ev.cognome);
+                        var time_text = ev.ora_appuntamento;
+                        if (ev.ora_fine_appuntamento != "") {
+                            time_text += ' - ' + ev.ora_fine_appuntamento
+                        } 
+                        var span = createElement('span', '', time_text + ' | ' + ev.indirizzo + ' (' + ev.zona + ') | ' + ev.cognome);
 
                         div.appendChild(square);
                         div.appendChild(span);

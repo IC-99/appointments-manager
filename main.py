@@ -64,7 +64,7 @@ class AppointmentManager:
         return -1
 
     def open_add_window(self):
-        webview.create_window('Aggiungi Appuntamento', f'file://{html_path}/add.html', js_api=self, width=600, height=900)
+        webview.create_window('Aggiungi Appuntamento', f'file://{html_path}/add.html', js_api=self, width=800, height=900)
         return True
     
     def open_calendar(self):
@@ -73,7 +73,7 @@ class AppointmentManager:
 
     def open_edit_window(self, id):
         self.current_id = str(id)
-        webview.create_window('Modifica Appuntamento', f'file://{html_path}/edit.html', js_api=self, width=600, height=900)
+        webview.create_window('Modifica Appuntamento', f'file://{html_path}/edit.html', js_api=self, width=800, height=900)
         return True
 
     def get_appointment(self):

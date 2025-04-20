@@ -37,14 +37,20 @@ window.onload = function () {
                     ultima_modifica: currentDate,
                     data_appuntamento: document.getElementById('data_appuntamento').value,
                     ora_appuntamento: document.getElementById('ora_appuntamento').value,
+                    ora_fine_appuntamento: document.getElementById('ora_fine_appuntamento').value,
                     marca: document.getElementById('marca').value,
                     modello: document.getElementById('modello').value,
                     matricola: document.getElementById('matricola').value,
                     difetto: document.getElementById('difetto').value,
                     garanzia: document.getElementById('garanzia').value,
+                    preventivo: document.getElementById('preventivo').value,
                     note: document.getElementById('note').value,
-                    stato_intervento: "in corso",
+                    stato_intervento: "in definizione",
                 };
+
+                if (appointment.data_appuntamento != "" && appointment.ora_appuntamento != "") {
+                    appointment.stato_intervento = "in corso";
+                }
 
                 try {
                     await window.pywebview.api.add_appointment(appointment);

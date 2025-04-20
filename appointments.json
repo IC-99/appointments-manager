@@ -78,11 +78,13 @@
         "ultima_modifica": "2025-04-20",
         "data_appuntamento": "2025-04-12",
         "ora_appuntamento": "09:30",
+        "ora_fine_appuntamento": "",
         "marca": "",
         "modello": "",
         "matricola": "",
         "difetto": "",
         "garanzia": "si",
+        "preventivo": "",
         "note": "",
         "stato_intervento": "in attesa"
     },
@@ -99,15 +101,18 @@
         "ultima_modifica": "2025-04-20",
         "data_appuntamento": "2025-04-24",
         "ora_appuntamento": "12:00",
+        "ora_fine_appuntamento": "13:00",
         "marca": "",
         "modello": "",
         "matricola": "",
         "difetto": "",
         "garanzia": "si",
+        "preventivo": "",
         "note": "",
         "stato_intervento": "in corso"
     },
     {
+        "id": "257713971516314",
         "nome": "Carlo",
         "cognome": "Verdi",
         "indirizzo": "Via Loredana Bert\u00e8 89",
@@ -119,13 +124,14 @@
         "ultima_modifica": "2025-04-20",
         "data_appuntamento": "2025-04-12",
         "ora_appuntamento": "09:00",
+        "ora_fine_appuntamento": "",
         "marca": "",
         "modello": "",
         "matricola": "",
         "difetto": "",
         "garanzia": "si",
+        "preventivo": "",
         "note": "",
-        "stato_intervento": "in corso",
-        "id": "257713971516314"
+        "stato_intervento": "in corso"
     }
 ]

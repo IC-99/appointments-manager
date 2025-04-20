@@ -24,11 +24,13 @@ window.onload = function () {
                 document.getElementById('email').value = appointment.email || '';
                 document.getElementById('data_appuntamento').value = appointment.data_appuntamento || '';
                 document.getElementById('ora_appuntamento').value = appointment.ora_appuntamento || '';
+                document.getElementById('ora_fine_appuntamento').value = appointment.ora_fine_appuntamento || '';
                 document.getElementById('marca').value = appointment.marca || '';
                 document.getElementById('modello').value = appointment.modello || '';
                 document.getElementById('matricola').value = appointment.matricola || '';
                 document.getElementById('difetto').value = appointment.difetto || '';
                 document.getElementById('garanzia').value = appointment.garanzia || '';
+                document.getElementById('preventivo').value = appointment.preventivo || '';
                 document.getElementById('note').value = appointment.note || '';
                 document.getElementById('stato_intervento').value = appointment.stato_intervento || '';
                 document.getElementById('data_creazione').textContent = appointment.data_creazione || '';
@@ -57,11 +59,13 @@ window.onload = function () {
                         ultima_modifica: currentDate,
                         data_appuntamento: document.getElementById('data_appuntamento').value,
                         ora_appuntamento: document.getElementById('ora_appuntamento').value,
+                        ora_fine_appuntamento: document.getElementById('ora_fine_appuntamento').value,
                         marca: document.getElementById('marca').value,
                         modello: document.getElementById('modello').value,
                         matricola: document.getElementById('matricola').value,
                         difetto: document.getElementById('difetto').value,
                         garanzia: document.getElementById('garanzia').value,
+                        preventivo: document.getElementById('preventivo').value,
                         note: document.getElementById('note').value,
                         stato_intervento: document.getElementById('stato_intervento').value,
                     };
