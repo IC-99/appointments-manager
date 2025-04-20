@@ -161,7 +161,7 @@ async function deleteAppointment(id) {
         try {
             await window.pywebview.api.delete_appointment(id);
             console.log('Appuntamento eliminato:', id);
-            loadAppointments(); // Ricarica gli appuntamenti dopo l'eliminazione
+            filterAppointments(); // Ricarica gli appuntamenti dopo l'eliminazione
         } catch (error) {
             console.error('Errore nella cancellazione dell\'appuntamento:', error);
         }
@@ -178,6 +178,10 @@ function editAppointment(id) {
     window.pywebview.api.open_edit_window(id);
 }
 
+function openCalendar() {
+    window.pywebview.api.open_calendar();
+}
+
 window.addEventListener('focus', function () {
-    loadAppointments();
+    filterAppointments();
 });
