@@ -1,10 +1,10 @@
-[ ] Aggiornare campo orario (dalle alle)
-[ ] Aggiungere campo Preventivo
+[x] Aggiornare campo orario (dalle alle)
+[x] Aggiungere campo Preventivo
 
 [x] Colonna "In Definizione"
-[ ] Definizione urgenze: dopo 2 settimane la card diventa rossa
+[x] Definizione urgenze: dopo 2 settimane la card diventa rossa
 [x] Calendario generico con zona e appuntamenti del giorno (4 fasce orarie)
 [ ] Controllo inserimento duplicati (usare il telefono come chiave, escludere i Completati dal check)
 [x] Filtro di ricerca
 [ ] Contare quante volte un appuntamento viene spostato (posticipato)
-[ ] Date leggibili
+[x] Date leggibili

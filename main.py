@@ -68,7 +68,7 @@ class AppointmentManager:
         return True
     
     def open_calendar(self):
-        webview.create_window('Aggiungi Appuntamento', f'file://{html_path}/calendar.html', js_api=self, width=1100, height=800)
+        webview.create_window('Calendario', f'file://{html_path}/calendar.html', js_api=self, width=1100, height=800)
         return True
 
     def open_edit_window(self, id):
@@ -100,3 +100,5 @@ if __name__ == '__main__':
     webview.create_window("Gestione Appuntamenti", url=f'file://{html_path}/index.html', js_api=api, width=1500, height=800, screen=webview.screens[0])
     print("API is ready:", api)
     webview.start(debug=False)
+
+# pyinstaller --onefile --noconsole --icon=icon.ico --add-data "templates;templates" --add-data "static;static" main.py

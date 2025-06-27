@@ -32,6 +32,9 @@ function escapeHtml(str) {
 }
 
 function getReadableDate(dateStr) {
+    if (dateStr == "") {
+        return "Data da inserire";
+    } 
     const yearStr = dateStr.slice(0, 4);
     const monthStr = dateStr.slice(5, 7);
     const dayStr = dateStr.slice(8, 10);
@@ -82,6 +85,56 @@ function getReadableDate(dateStr) {
     return res;
 }
 
+function getHour(startHourStr, endHourStr) {
+    if (startHourStr != "" && endHourStr != "") {
+        return "Dalle " + startHourStr + " alle " + endHourStr;
+    }
+    if (startHourStr != "") {
+        return "Dalle " + startHourStr;
+    }
+    if (endHourStr != "") {
+        return "Fino alle " + endHourStr;
+    }
+    return "Orario da inserire";
+}
+
+function getPlace(addressStr, area) {
+    if (addressStr != "" && area != "") {
+        return addressStr + " (" + area + ")";
+    }
+    if (addressStr != "") {
+        return addressStr;
+    }
+    if (area != "") {
+        return "Zona " + area;
+    }
+    return "Indirizzo da inserire";
+}
+
+
+function getDevice(brand, model, defect) {
+    if (brand != "" || model != "" && defect != "") {
+        return brand + " " + model + " (" + defect + ")";
+    }
+    if (brand != "" || model != "") {
+        return brand + " " + model;
+    }
+    if (defect != "") {
+        return "Dispositivo con difetto: " + defect;
+    }
+    return "Dispositivo e difetto da inserire";
+}
+
+function getDaysLate(fromStr) {
+    const [year, month, day] = fromStr.split('-').map(Number);
+    const fromDay = new Date(year, month - 1, day);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const diffMs = today - fromDay;
+    const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+    return diffDays;
+}
+
 async function clearFilter() {
     document.getElementById('search-input').value = '';
     filterAppointments();
@@ -115,9 +168,9 @@ async function filterAppointments() {
                     <strong>${appointment.nome} ${appointment.cognome}</strong>
                 </div>
                 <div class="appointment-details">
-                    <p><strong>Data:</strong> ${getReadableDate(appointment.data_appuntamento)} - ${appointment.ora_appuntamento}</p>
-                    <p><strong>Indirizzo:</strong> ${appointment.indirizzo} (${appointment.zona})</p>
-                    <p><strong>Dispositivo:</strong> ${appointment.marca} ${appointment.modello} (${appointment.difetto})</p>
+                    <p><strong>Data:</strong> ${getReadableDate(appointment.data_appuntamento)} - ${getHour(appointment.ora_appuntamento, appointment.ora_fine_appuntamento)}</p>
+                    <p><strong>Indirizzo:</strong> ${getPlace(appointment.indirizzo, appointment.zona)}</p>
+                    <p><strong>Dispositivo:</strong> ${getDevice(appointment.marca, appointment.modello, appointment.difetto)}</p>
                     <p><strong>Note:</strong> ${appointment.note || 'Nessuna nota disponibile'}</p>
                 </div>
                 <div class="buttons-container">
@@ -134,10 +187,34 @@ async function filterAppointments() {
 
             // Aggiungi l'appuntamento alla colonna corrispondente in base allo stato
             if (appointment.stato_intervento === 'in attesa') {
+                const days_late = getDaysLate(appointment.ultima_modifica);
+                var color = "#ffffff";
+                if (days_late >= 3 && days_late <= 5) {
+                    color = '#ffcccc';
+                } else if (days_late >= 6 && days_late <= 9){
+                    color = '#ff9999';
+                } else if (days_late >= 10 && days_late <= 13){
+                    color = '#ff6666';
+                } else if (days_late >= 14){
+                    color = '#cc0000';
+                }
+                item.style.backgroundColor = color;
                 document.getElementById('waiting-appointments').appendChild(item);
             } else if (appointment.stato_intervento === 'in corso') {
                 document.getElementById('in-progress-appointments').appendChild(item);
             } else if (appointment.stato_intervento === 'in definizione') {
+                const days_late = getDaysLate(appointment.ultima_modifica);
+                var color = "#ffffff";
+                if (days_late >= 3 && days_late <= 5) {
+                    color = '#ffcccc';
+                } else if (days_late >= 6 && days_late <= 9){
+                    color = '#ff9999';
+                } else if (days_late >= 10 && days_late <= 13){
+                    color = '#ff6666';
+                } else if (days_late >= 14){
+                    color = '#cc0000';
+                }
+                item.style.backgroundColor = color;
                 document.getElementById('in-definition-appointments').appendChild(item);
             } else if (appointment.stato_intervento === 'completato') {
                 document.getElementById('completed-appointments').appendChild(item);
